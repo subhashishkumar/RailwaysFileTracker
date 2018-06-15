@@ -1,0 +1,32 @@
+html
+  head
+    link(rel='stylesheet', href='/stylesheets/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/login.css')
+    script(src='/js/login.js')
+  body
+   .col-lg-12
+    if errors
+        each error, i in errors
+         .alert.alert-danger(style='margin-top:16px') #{error.msg}
+   .container
+    .login-container
+     p
+        strong Admin Login
+     .form-box
+       form(action='/user/login', method='POST')
+        input(name='username', type='text', placeholder='email', required)
+        input(name='password' type='password', placeholder='password' required)
+        button.btn.btn-primary.btn-block.login(type='submit', name='ca') Sign In
+        button.reset.btn.btn-danger.btn-block.login(type='reset') Reset
+        |&nbsp;
+        a(href='/user/signup')
+         h6 New User? 
+  scripts
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/jquery.validate.min.js')
+    script(src='/js/noticemodal.js')
+
+

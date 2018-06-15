@@ -1,0 +1,155 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 23/11/2017 17:55
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-notifications-button:before { content: "\f100"; }
+.flaticon-add-user-1:before { content: "\f101"; }
+.flaticon-medal:before { content: "\f102"; }
+.flaticon-wallet-1:before { content: "\f103"; }
+.flaticon-cogwheel-3:before { content: "\f104"; }
+.flaticon-cogwheel-2:before { content: "\f105"; }
+.flaticon-cogwheel-1:before { content: "\f106"; }
+.flaticon-cogwheel:before { content: "\f107"; }
+.flaticon-settings:before { content: "\f108"; }
+.flaticon-user:before { content: "\f109"; }
+.flaticon-technology:before { content: "\f10a"; }
+.flaticon-menu-three-horizontal-lines-symbol:before { content: "\f10b"; }
+.flaticon-settings-gears:before { content: "\f10c"; }
+.flaticon-eye:before { content: "\f10d"; }
+.flaticon-indian-rupee:before { content: "\f10e"; }
+.flaticon-voucher:before { content: "\f10f"; }
+.flaticon-profile:before { content: "\f110"; }
+.flaticon-pen-on-square-of-paper-interface-symbol:before { content: "\f111"; }
+.flaticon-users-group:before { content: "\f112"; }
+.flaticon-receipt-book:before { content: "\f113"; }
+.flaticon-add-list:before { content: "\f114"; }
+.flaticon-delete:before { content: "\f115"; }
+.flaticon-adding-users:before { content: "\f116"; }
+.flaticon-dislike-thumb:before { content: "\f117"; }
+.flaticon-circle:before { content: "\f118"; }
+.flaticon-close:before { content: "\f119"; }
+.flaticon-sign-out-option:before { content: "\f11a"; }
+.flaticon-check:before { content: "\f11b"; }
+.flaticon-dashboard:before { content: "\f11c"; }
+.flaticon-persons-at-museum-entrance-elevator-one-visitor-and-a-guard:before { content: "\f11d"; }
+.flaticon-spreadsheet-with-sum-symbol:before { content: "\f11e"; }
+.flaticon-elections:before { content: "\f11f"; }
+.flaticon-avatar:before { content: "\f120"; }
+.flaticon-commerce-1:before { content: "\f121"; }
+.flaticon-question:before { content: "\f122"; }
+.flaticon-advertisement:before { content: "\f123"; }
+.flaticon-team:before { content: "\f124"; }
+.flaticon-wallet:before { content: "\f125"; }
+.flaticon-open-hand-1:before { content: "\f126"; }
+.flaticon-add-user:before { content: "\f127"; }
+.flaticon-commerce:before { content: "\f128"; }
+.flaticon-people:before { content: "\f129"; }
+.flaticon-history:before { content: "\f12a"; }
+.flaticon-board:before { content: "\f12b"; }
+.flaticon-business:before { content: "\f12c"; }
+.flaticon-invoice:before { content: "\f12d"; }
+.flaticon-door:before { content: "\f12e"; }
+.flaticon-rupee:before { content: "\f12f"; }
+.flaticon-calendar:before { content: "\f130"; }
+.flaticon-open-hand:before { content: "\f131"; }
+.flaticon-push-pin:before { content: "\f132"; }
+.flaticon-garbage:before { content: "\f133"; }
+.flaticon-book:before { content: "\f134"; }
+.flaticon-agenda:before { content: "\f135"; }
+.flaticon-marketing:before { content: "\f136"; }
+.flaticon-home:before { content: "\f137"; }
+.flaticon-alert:before { content: "\f138"; }
+.flaticon-like:before { content: "\f139"; }
+    
+    $font-Flaticon-notifications-button: "\f100";
+    $font-Flaticon-add-user-1: "\f101";
+    $font-Flaticon-medal: "\f102";
+    $font-Flaticon-wallet-1: "\f103";
+    $font-Flaticon-cogwheel-3: "\f104";
+    $font-Flaticon-cogwheel-2: "\f105";
+    $font-Flaticon-cogwheel-1: "\f106";
+    $font-Flaticon-cogwheel: "\f107";
+    $font-Flaticon-settings: "\f108";
+    $font-Flaticon-user: "\f109";
+    $font-Flaticon-technology: "\f10a";
+    $font-Flaticon-menu-three-horizontal-lines-symbol: "\f10b";
+    $font-Flaticon-settings-gears: "\f10c";
+    $font-Flaticon-eye: "\f10d";
+    $font-Flaticon-indian-rupee: "\f10e";
+    $font-Flaticon-voucher: "\f10f";
+    $font-Flaticon-profile: "\f110";
+    $font-Flaticon-pen-on-square-of-paper-interface-symbol: "\f111";
+    $font-Flaticon-users-group: "\f112";
+    $font-Flaticon-receipt-book: "\f113";
+    $font-Flaticon-add-list: "\f114";
+    $font-Flaticon-delete: "\f115";
+    $font-Flaticon-adding-users: "\f116";
+    $font-Flaticon-dislike-thumb: "\f117";
+    $font-Flaticon-circle: "\f118";
+    $font-Flaticon-close: "\f119";
+    $font-Flaticon-sign-out-option: "\f11a";
+    $font-Flaticon-check: "\f11b";
+    $font-Flaticon-dashboard: "\f11c";
+    $font-Flaticon-persons-at-museum-entrance-elevator-one-visitor-and-a-guard: "\f11d";
+    $font-Flaticon-spreadsheet-with-sum-symbol: "\f11e";
+    $font-Flaticon-elections: "\f11f";
+    $font-Flaticon-avatar: "\f120";
+    $font-Flaticon-commerce-1: "\f121";
+    $font-Flaticon-question: "\f122";
+    $font-Flaticon-advertisement: "\f123";
+    $font-Flaticon-team: "\f124";
+    $font-Flaticon-wallet: "\f125";
+    $font-Flaticon-open-hand-1: "\f126";
+    $font-Flaticon-add-user: "\f127";
+    $font-Flaticon-commerce: "\f128";
+    $font-Flaticon-people: "\f129";
+    $font-Flaticon-history: "\f12a";
+    $font-Flaticon-board: "\f12b";
+    $font-Flaticon-business: "\f12c";
+    $font-Flaticon-invoice: "\f12d";
+    $font-Flaticon-door: "\f12e";
+    $font-Flaticon-rupee: "\f12f";
+    $font-Flaticon-calendar: "\f130";
+    $font-Flaticon-open-hand: "\f131";
+    $font-Flaticon-push-pin: "\f132";
+    $font-Flaticon-garbage: "\f133";
+    $font-Flaticon-book: "\f134";
+    $font-Flaticon-agenda: "\f135";
+    $font-Flaticon-marketing: "\f136";
+    $font-Flaticon-home: "\f137";
+    $font-Flaticon-alert: "\f138";
+    $font-Flaticon-like: "\f139";
