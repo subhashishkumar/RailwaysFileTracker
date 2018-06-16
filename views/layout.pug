@@ -1,0 +1,104 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='robots', content='all,follow')
+    link(rel='stylesheet', href='/stylesheets/css/bootstrap.min.css')
+    link(rel='stylesheet', type='text/css', href='/stylesheets/font/flaticon.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:300,400,700')
+    link#theme-stylesheet(rel='stylesheet', href='/stylesheets/css/style.default.css')
+    link(rel='stylesheet', href='/stylesheets/css/custom.css')
+    link(rel='stylesheet', href='/stylesheets/events.css')
+    link(rel='shortcut icon', href='/img/ab.jpg')
+    link(rel='stylesheet', href='/stylesheets/chosen.min.css')
+    title Project
+    block head
+
+  body
+    .page.home-page
+      // Main Navbar
+      header.nomarginpadding
+        nav.navbar.navbar-fixed-top
+          .container-fluid
+            .navbar-holder.d-flex.align-items-center.justify-content-between
+              // Navbar Header
+              .navbar-header
+                // Navbar Brand
+                a.navbar-brand(href='/')
+                  span File Tracking System
+                // Toggle Button
+                //a#toggle-btn.flaticon-menu-three-horizontal-lines-symbol.active(href='#', style='margin-left: 60px;')
+              // Navbar Menu                                        
+
+              ul.nav-menu.list-unstyled.d-flex.flex-md-row.align-items-md-center(style='font-weight: 400;')           
+                // Logout
+                
+                li.nav-item.dropdown
+                  a( href='/user/logout')
+                    i.flaticon-sign-out-option
+                    | Logout      
+      block content
+            
+    // Javascript files
+    script(src='https://code.jquery.com/jquery-3.2.1.min.js', integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=', crossorigin='anonymous')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js')
+    script(src='/js/moment.js')
+    script(src='https://use.fontawesome.com/d984f66e10.js')
+    script(src='/js/tether.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/jquery.cookie.js')
+    script(src='/js/jquery.validate.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js')
+    script(src='/js/charts-home.js')
+    script(src='/js/front.js')
+    script(src='/js/file-upload.js')
+    script(src='/js/admodal.js')
+    script(src='/js/noticemodal.js')
+    script(src='/js/tableapartment.js')
+    script(src='/js/chosen.jquery.min.js')
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    // 
+    script.
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+      $(document).ready(function () {
+      // ANIMATEDLY DISPLAY THE NOTIFICATION COUNTER.
+      $('#noti_Counter')
+      .css({ opacity: 0 })
+      .text('7')              // ADD DYNAMIC VALUE (YOU CAN EXTRACT DATA FROM DATABASE OR XML).
+      .css({ top: '-10px' })
+      .animate({ top: '-2px', opacity: 1 }, 500);
+      $('#noti_Button').click(function () {
+      // TOGGLE (SHOW OR HIDE) NOTIFICATION WINDOW.
+      $('#notifications').fadeToggle('fast', 'linear', function () {
+      if ($('#notifications').is(':hidden')) {
+      $('#noti_Button').css('color', '#FFF');
+      }
+      else $('#noti_Button').css('color', '#241880');        // CHANGE BACKGROUND COLOR OF THE BUTTON.
+      });
+      $('#noti_Counter').fadeOut('slow');                 // HIDE THE COUNTER.
+      return false;
+      });
+      // HIDE NOTIFICATIONS WHEN CLICKED ANYWHERE ON THE PAGE.
+      $(document).click(function () {
+      $('#notifications').hide();
+      // CHECK IF NOTIFICATION COUNTER IS HIDDEN.
+      if ($('#noti_Counter').is(':hidden')) {
+      // CHANGE BACKGROUND COLOR OF THE BUTTON.
+      $('#noti_Button').css('color', '#FFF');
+      }
+      });
+      $('#notifications').click(function () {
+      return false;       // DO NOTHING WHEN CONTAINER IS CLICKED.
+      });
+      });
+
+    block scripts

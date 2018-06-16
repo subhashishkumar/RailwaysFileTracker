@@ -3,10 +3,12 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const session = require('express-session')
+const session = require('express-session');
 
 const app =  express();
 const port = process.env.PORT || 3000;
+
+const Files = require('./models/file');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://guru:guru100@ds261440.mlab.com:61440/interns');
@@ -39,7 +41,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.get('/',ensureAuthenticated,(req,res)=>{
-	res.render('home');
+  Files.find({},(err,files)=>{
+    res.render('home',{files});
+  });
 })
 
 function ensureAuthenticated(req, res, next){
@@ -53,6 +57,9 @@ function ensureAuthenticated(req, res, next){
 
 const user = require('./routes/user');
 app.use('/user',user);
+
+const file = require('./routes/file');
+app.use('/file',file);
 	
 app.listen(port,()=>{
 	console.log(`Server is up on port ${port}`);
