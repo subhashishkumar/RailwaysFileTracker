@@ -15,5 +15,14 @@ router.post('/add',(req,res)=>{
 	res.redirect('/');
 })
 
+router.get('/delete/:fileId',(req,res)=>{
+	File.remove({_id:req.params.fileId},(err)=>{
+		if(err)
+      		throw err;
+    	req.flash('success_msg', 'File Succesfully Deleted');
+    	res.redirect('/');
+	});
+})
+
 module.exports = router;
 
