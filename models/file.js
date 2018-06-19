@@ -6,6 +6,7 @@ var FileSchema=mongoose.Schema({
   createdOn:{type:String },
   createdBy:{type:String},
   details:{type:String},
+  movement:[{from:String,to:String,movedOn:String}]
 });
 
 var File = module.exports = mongoose.model('File', FileSchema);

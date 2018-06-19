@@ -42,6 +42,7 @@ app.use(passport.session());
 
 app.get('/',ensureAuthenticated,(req,res)=>{
   Files.find({},(err,files)=>{
+    //console.log(files);
     res.render('home',{files});
   });
 })
