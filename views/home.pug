@@ -37,7 +37,6 @@ block content
                        strong #{file.createdOn}
                      td.createdBy
                        strong #{file.createdBy}
-             tfoot.pagination(style='margin-top:5px')
   
   #thisModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
      .modal-dialog(role='document')
@@ -71,15 +70,7 @@ block scripts
   script(src='/js/list.min.js')
   script.
     var total = document.getElementById('total').value;
-    for(i=0; i<total; i++){
-          var date= document.getElementById(i).value;
-          var cdate= moment(date, 'x').format('DD/MM/YYYY');
-          var div = document.getElementById('div'+i);
-          div.innerHTML = cdate;
-        }
     var options = {
-      valueNames: [ 'name' , 'fileId', 'createdOn', 'CreatedBy'],
-      page: 4,  
-      pagination: true 
+      valueNames: [ 'name' , 'fileId', 'createdOn', 'createdBy']
     };
-    var fileList = new List('fileList', options);
+    var fileList = new List('fileList', options); 
