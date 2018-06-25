@@ -42,9 +42,9 @@ passport.deserializeUser(function(id, done) {
 });
 
 router.post('/login',
-	passport.authenticate('local',{successRedirect:'/',failureRedirect:'/user/login',failureFlash:true}),
+	passport.authenticate('local',{successRedirect:'/user/home',failureRedirect:'/user/login',failureFlash:true}),
 	(req,res)=>{
-		res.redirect('/	')
+		res.redirect('/user/home')
 	})
 
 router.get('/signup',(req,res)=>{

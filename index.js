@@ -40,7 +40,11 @@ app.use(function (req, res, next) {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.get('/',ensureAuthenticated,(req,res)=>{
+app.get('/',(req,res)=>{
+  res.render('main.pug')
+})
+
+app.get('/user/home',ensureAuthenticated,(req,res)=>{
   Files.find({},(err,files)=>{
     //console.log(files);
     res.render('home',{files});
