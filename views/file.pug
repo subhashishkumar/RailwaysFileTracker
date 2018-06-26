@@ -17,9 +17,10 @@ block content
            table.table
              thead
                tr
-                 th(style='width:33%') Moved From
-                 th(style='width:33%') Moved To
-                 th(style='width:34%') Moved On
+                 th(style='width:15%') Moved From
+                 th(style='width:15%') Moved To
+                 th(style='width:15%') Moved On
+                 th(style='width:55%') Remarks
              tbody.list
                if movement.length == 0
                 tr
@@ -34,6 +35,8 @@ block content
                        strong #{move.to}
                      td.on
                        strong #{move.movedOn}
+                     td.remark
+                       strong #{move.remark}
 
   #thisModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
      .modal-dialog(role='document')
@@ -46,13 +49,22 @@ block content
            form(method='post', action='/file/update/'+file._id)
              .form-group
                label From
-               input.form-control(type='text' name='from' placeholder='File Moved From..' required)
+               br
+               select(name='from', required)
+                 each department in departments
+                   option(value=department.name) #{department.name}
              .form-group
                label To
-               input.form-control(type='text' name='to' placeholder='File moved to..' required)
+               br
+               select(name='to', required )
+                 each department in departments
+                   option(value=department.name) #{department.name}
              .form-group
                label File Moved on
-               input.form-control(type='date' name='movedOn' required) 
+               input.form-control(type='date' name='movedOn' required)
+             .form-group
+               label Remarks
+               textarea.form-control( name='remark' placeholder='Enter remark..') 
              .form-group
                input.btn.btn-primary(type='submit', value='Submit' Style='float:right') 
     
@@ -61,6 +73,6 @@ block scripts
   script.
     var total = document.getElementById('total').value;
     var options = {
-      valueNames: [ 'from' , 'to', 'movedOn']
+      valueNames: [ 'from' , 'to', 'movedOn','remark']
     };
     var fileList = new List('fileList', options); 

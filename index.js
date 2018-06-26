@@ -9,6 +9,8 @@ const app =  express();
 const port = process.env.PORT || 3000;
 
 const Files = require('./models/file');
+const Department = require('./models/department');
+const Filetype = require('./models/filetype');
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://guru:guru100@ds261440.mlab.com:61440/interns');
@@ -46,8 +48,14 @@ app.get('/',(req,res)=>{
 
 app.get('/user/home',ensureAuthenticated,(req,res)=>{
   Files.find({},(err,files)=>{
-    //console.log(files);
-    res.render('home',{files});
+    if(err) throw err;
+    Department.find({},(err,departments)=>{
+      if(err) throw err;
+      Filetype.find({},(err,filetypes)=>{
+        if(err) throw err;
+        res.render('home',{files:files,departments:departments,filetypes:filetypes});
+      })
+    })
   });
 })
 

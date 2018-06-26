@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  section
+    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#thisModal' style='float:right;margin-right:70px' ) Add File Type
+  .container(style='margin-top:20px')
+    .col-lg-12(style='width:95%')
+      .card
+       .card-header
+          h3(style='color: black; font-weight: 400;')
+              i.flaticon-question
+              |&nbsp;&nbsp; All File Types
+       .card-body
+         #fileList
+           //-input.search(placeholder='Search here' style='margin-left:2px')
+           // input(type='hidden' id='total' value=movement.length)
+           table.table
+             thead
+               tr
+                 th(style='width:80%') Files types
+                 th(style='width:20%') Delete
+             tbody.list
+               if types.length == 0
+                tr
+                 td(colspan='4', style='text-align:center')
+                  strong No file types movement to display
+               else
+                each type in types
+                   tr
+                     td.from
+                       strong #{type.name}
+                     td.delete
+                       a.remove.btn.btn-secondary(href='/user/delete/filetype/'+type._id, style='border:none;margin-right:10px;color:Green')
+                         i.fa.fa-trash-o
+
+  #thisModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+     .modal-dialog(role='document')
+       .modal-content
+         .modal-header
+           h4#exampleModalLabel.modal-title Add a New File Type
+           button.close(type='button', data-dismiss='modal', aria-label='Close')
+             span(aria-hidden='true') ×
+         .modal-body
+           form(method='post', action='/user/add/filetype')
+             .form-group
+               label File Type
+               input.form-control(type='text' name='name' placeholder='File Type..' required)
+             .form-group
+               input.btn.btn-primary(type='submit', value='Submit' Style='float:right') 

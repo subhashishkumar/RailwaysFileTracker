@@ -17,11 +17,12 @@ block content
            table.table
              thead
                tr
-                 th(style='width:30%') File Name
-                 th(style='width:20%') File Id
-                 th(style='width:20%') Created On
-                 th(style='width:20%') Created By
-                 th(style='width:10%').text-nowrap Action
+                 th(style='width:20%') File Name
+                 th(style='width:15%') File Id
+                 th(style='width:15%') File Type
+                 th(style='width:15%') Created On
+                 th(style='width:15%') Created By
+                 th(style='width:20%').text-nowrap Action
              tbody.list
                if files.length == 0
                 tr
@@ -34,12 +35,14 @@ block content
                        strong #{file.name}
                      td.fileId
                        strong #{file.fileId}
+                     td.fileType
+                       strong #{file.type}
                      td.createdOn
                        strong #{file.createdOn}
                      td.createdBy
                        strong #{file.createdBy}
                      td.text-nowrap
-                       a.btn.btn-sm.btn-secondary(href='/file/edit/'+file._id style='border:none;margin-right:10px;color:Green') Edit
+                       a.btn.btn-sm.btn-secondary(href='/file/edit/'+file._id style='border:none;margin-right:10px;color:Green') Update
                        a.remove.btn.btn-secondary(href='/file/delete/'+file._id, style='border:none;margin-right:10px;color:Green')
                          i.fa.fa-trash-o
   #thisModal.modal.fade.text-left(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
@@ -55,16 +58,22 @@ block content
                label File Name
                input.form-control(type='text' name='name' placeholder='Enter file name..' required)
              .form-group
-               label File Id
-               input.form-control(type='text' name='fileId' placeholder='Enter file id..' required)
-             .form-group
                label File Details
                textarea.form-control( name='details' placeholder='Enter file details..' required)
              .form-group
-               label Created By
-               input.form-control(type='text' name='createdBy' placeholder='Who created..' required)
+               label File Type
+               br
+               select(name='type' required)
+                 each type in filetypes
+                   option(value=type.name) #{type.name}
              .form-group
-               label Created On
+               label Created By / Forwarded By
+               br
+               select(name='createdBy', required)
+                 each department in departments
+                   option(value=department.name) #{department.name}
+             .form-group
+               label Created On / Recieved On
                input.form-control(type='date' name='createdOn' placeholder='Enter created date ..' required)
              .form-group
                input.btn.btn-primary(type='submit', value='Submit' Style='float:right') 

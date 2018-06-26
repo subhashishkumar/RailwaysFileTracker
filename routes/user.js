@@ -6,6 +6,8 @@ const LocalStrategy = require('passport-local').Strategy;
 const router = express.Router();
 
 const User = require('../models/user');
+const Department = require('../models/department');
+const Filetype = require('../models/filetype');
 	
 router.get('/login',(req,res)=>{
 	res.render('login');
@@ -81,6 +83,59 @@ router.get('/logout',(req,res)=>{
 	req.logout();
 	res.redirect('/user/login');
 })
+
+router.get('/add/department',ensureAuthenticated,(req,res)=>{
+	Department.find({},(err,departments)=>{
+		if(err) throw err;
+		res.render('department',{departments:departments});
+	})
+})	
+
+router.post('/add/department',ensureAuthenticated,(req,res)=>{
+	var newDepartment = Department();
+	newDepartment.name = req.body.name;
+	newDepartment.save();
+	res.redirect('/user/add/department');
+})
+
+router.get('/delete/department/:departmentId',ensureAuthenticated,(req,res)=>{
+	Department.remove({_id:req.params.departmentId},(err,department)=>{
+		if(err) throw err;
+    	req.flash('success_msg', 'Department Succesfully Deleted');
+    	res.redirect('/user/add/department');
+	})
+})
+
+router.get('/add/filetype',ensureAuthenticated,(req,res)=>{
+	Filetype.find({},(err,filetypes)=>{
+		if(err) throw err;
+		res.render('filetype',{types:filetypes});
+	})
+})
+
+router.post('/add/filetype',ensureAuthenticated,(req,res)=>{
+	var newFiletype = Filetype();
+	newFiletype.name = req.body.name;
+	newFiletype.save();
+	res.redirect('/user/add/filetype');
+})
+
+router.get('/delete/filetype/:filetypeId',ensureAuthenticated,(req,res)=>{
+	Filetype.remove({_id:req.params.filetypeId},(err,filetype)=>{
+		if(err) throw err;
+    	req.flash('success_msg', 'Filetype Succesfully Deleted');
+    	res.redirect('/user/add/filetype');
+	})
+})
+
+function ensureAuthenticated(req, res, next){
+  if(req.isAuthenticated()){
+    return next();
+  } else {
+    req.flash('danger', 'Please login');
+    res.redirect('/user/login');
+  }
+}
 
 module.exports = router;
 
