@@ -1,97 +1,294 @@
 doctype html
-html(lang='en')
-  head
-    meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    style.
-      #register{
-      margin-right:7px;
-      }
-      #logo{
-      margin:auto;
-      width:70px;
-      height70px;
-      float:left;
-      position:relative;
-      }
-      .jumbotron{
-      margin-top:50px;
-      height: 600px;
-      }
-      .blue {
-      color: white;
-      background-color:#189AF0;
-      width:450px;
-      position:relative;
-      float: right;
-      top:440px;
-      font-family: "Times New Roman", Times, serif;
-      opacity:0.8;
-      border-radius: 5px;
-      }
-      .white {
-      color: #189AF0;
-      background-color:white;
-      width:520px;
-      position:relative;
-      float: right;
-      top:480px;
-      left:300px;
-      font-family: "Times New Roman", Times, serif;
-      opacity:0.8;
-      border-radius: 5px;
-      }
-      }
-      }
-    title File Management System
-    // Bootstrap core CSS
-    link(href='../../dist/css/bootstrap.min.css', rel='stylesheet')
-    // Custom styles for this template
-    link(href='sticky-footer-navbar.css', rel='stylesheet')
-  body
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', integrity='sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M', crossorigin='anonymous')
-    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', integrity='sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4', crossorigin='anonymous')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js', integrity='sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1', crossorigin='anonymous')
-    header
-      // Fixed navbar
-      nav.navbar.navbar-expand-md.navbar-light.fixed-top(style='background-color: #e3f2fd;')
-        a.navbar-brand(href='/')
-          img#logo(src='img/railway.png')
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
-          span.navbar-toggler-icon
-        #navbarCollapse.collapse.navbar-collapse
-          ul.navbar-nav.mr-auto
-            li.nav-item.active
-              h1 File Management System &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            li.nav-item.active
-              a.nav-link.active(href='/user/login')
-                | Log In 
-                span.sr-only (current)
-            li.nav-item.active
-              a.nav-link(href='/user/signup') 
-                | Sign Up
-    #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-        li(data-target='#carouselExampleIndicators', data-slide-to='1')
-        li(data-target='#carouselExampleIndicators', data-slide-to='2')
-      .carousel-inner(data-interval='4000')
-        .carousel-item.active
-          img.d-block.w-100(src='img/rail.jpg', alt='First slide')
-        .carousel-item
-          img.d-block.w-100(src='img/rail1.jpg', alt='Second slide')
-        .carousel-item
-          img.d-block.w-100(src='img/rail2.jpg', alt='Third slide')
-      a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-        span.carousel-control-prev-icon(aria-hidden='true')
-        span.sr-only Previous
-      a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
-        span.carousel-control-next-icon(aria-hidden='true')
-        span.sr-only Next
-    #about.container
-    footer.footer
-      .container
-        span.text-muted 
+head
+  meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+  meta(http-equiv='content-type', content='text/html; charset=UTF-8')
+  meta(name='robots', content='noindex, nofollow')
+  meta(name='googlebot', content='noindex, nofollow')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  meta(name='description', content='')
+  meta(name='author', content='')
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css')
+  script(type='text/javascript', src='/js/lib/dummy.js')
+  link(rel='stylesheet', type='text/css', href='/css/result-light.css')
+  style(type='text/css').
+    a[id= "nav1"]:target ~ #main div.article {
+    -webkit-transform: translateY( 0px);
+    transform: translateY( 0px );
+    }
+    a[id= "nav2"]:target ~ #main div.article {
+    -webkit-transform: translateY( -500px );
+    transform: translateY( -500px );
+    }
+    a[id= "nav3"]:target ~ #main div.article {
+    -webkit-transform: translateY( -1000px );
+    transform: translateY( -1000px );
+    }
+    header {
+    position: fixed;
+    z-index: 10;
+    }
+    .article {
+    width: 100%;
+    height: 650px;
+    z-index:0;
+    -webkit-transform: translateZ( 0 );
+    transform: translateZ( 0 );
+    -webkit-transition: -webkit-transform 2s ease-in-out;
+    transition: transform 2s ease-in-out;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    }
+    .article p {
+    font-family: sans-serif;
+    font-size: 64px;
+    font-size: 4rem;
+    position:relative;
+    line-height: 200px;
+    text-align: center;
+    margin: 0;
+    padding:10px;
+    }
+    #register{
+    margin-right:15px;
+    }
+    #logo{
+    margin:auto;
+    width:70px;
+    height70px;
+    float:left;
+    position:relative;
+    }
+    .jumbotron{
+    margin-top:50px;
+    height: 600px;
+    }
+    .blue {
+    color: white;
+    background-color:#189AF0;
+    width:450px;
+    position:relative;
+    float: right;
+    top:440px;
+    font-family: "Times New Roman", Times, serif;
+    opacity:0.8;
+    border-radius: 5px;
+    }
+    .white {
+    color: #189AF0;
+    background-color:white;
+    width:520px;
+    position:relative;
+    float: right;
+    top:480px;
+    left:300px;
+    font-family: "Times New Roman", Times, serif;
+    opacity:0.8;
+    border-radius: 5px;
+    }
+    #develop{
+    margin:20px;}
+    #fms{
+    padding: 15px;
+    position:relative;
+    margin-top:5px;
+    margin-left: 200px;
+    font-weight: bold;
+    opacity: 0.8 ;
+    }
+    .nav-link {
+    margin-top: 32px;
+    }
+    #table{
+    padding: 10px;
+    margin:10px;
+    }
+    #func {
+    margin:20px;
+    }
+    #banner {
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    -ms-flex-align: center;
+    margin-bottom:-30px;
+    }
+  // TODO: Missing CoffeeScript 2
+  script(type='text/javascript').
+    window.onload=function(){
+    }
+  title Railway Intership | File Tracking
+  // Bootstrap core CSS
+  link(href='../../dist/css/bootstrap.min.css', rel='stylesheet')
+  // Custom styles for this template
+  link(href='sticky-footer-navbar.css', rel='stylesheet')
+link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css', integrity='sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M', crossorigin='anonymous')
+script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js', integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN', crossorigin='anonymous')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js', integrity='sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4', crossorigin='anonymous')
+script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js', integrity='sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1', crossorigin='anonymous')
+header.nav
+  nav.navbar.navbar-expand-md.navbar-light.fixed-top.nav-pills(style='background-color: #e3f2fd;')
+    a.navbar-brand(href='#nav1')
+      img#logo(src='./img/railway.png')
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link.active(href='#nav1')
+            | Home 
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='#nav2') About
+        li.nav-item
+          a.nav-link(href='#nav3') Our Team
+        li.nav-item
+          h3#fms.text-white(style='background-color:#007BFF;') File Management System
+      form.form-inline.mt-2.mt-md-0
+        a(href='./user/login')
+          div
+            button#register.btn.btn-outline-success.my-2.my-sm-0(type='button') Login
+        a(href='./user/signup')
+          div
+            button#register.btn.btn-outline-success.my-2.my-sm-0(type='button') Sign Up
+a#nav1
+a#nav2
+a#nav3
+#main
+  section#banner
+    #nav1.article
+      p
+      #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+        ol.carousel-indicators
+          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+          li(data-target='#carouselExampleIndicators', data-slide-to='1')
+          li(data-target='#carouselExampleIndicators', data-slide-to='2')
+          li(data-target='#carouselExampleIndicators', data-slide-to='3')
+        .carousel-inner(data-interval='4000')
+          .carousel-item.active
+            img.d-block.w-100(src='./img/rail.jpg', alt='First slide')
+          .carousel-item
+            img.d-block.w-100(src='./img/rail1.jpg', alt='Second slide')
+          .carousel-item
+            img.d-block.w-100(src='./img/rail2.jpg', alt='Third slide')
+          .carousel-item
+            img.d-block.w-100(src='./img/rail3.jpg', alt='Fourth slide')
+        a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+          span.carousel-control-prev-icon(aria-hidden='true')
+          span.sr-only Previous
+        a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+          span.carousel-control-next-icon(aria-hidden='true')
+          span.sr-only Next
+  section#banner
+    #nav2.article
+      #func.shadow-lg.p-4.mb-4.bg-white
+        h2 FUNCTIONS OF THE ACCOUNTS DEPARTMENT
+      #table
+        .shadow-lg.p-4.mb-4.bg-white
+          ul.list-group
+            li.list-group-item.list-group-item-warning
+              b
+                h4
+                  | The Accounts Department of a Railway Administration is mainly
+                  | responsible for :-
+            li.list-group-item.list-group-item-primary
+              | Keeping the accounts of the railway in accordance with the
+              | prescribed rules.
+            li.list-group-item.list-group-item-dark
+              | The check with reference to rules or orders (Known as &ldquo;Internal
+              | Check&rdquo;) of transactions affecting the receipts and expenditure
+              | of railway.
+            li.list-group-item.list-group-item-primary  Prompt settlement of proper claim sagainst the railway.
+            li.list-group-item.list-group-item-dark
+              | Tendering, as part of its important functions, advice to the
+              | administration whenever required or necessary in all matters
+              | involving railway finance.
+            li.list-group-item.list-group-item-primary
+              | Compilation of budgets in consultation with other departments
+              | and monitoring the budgetary control procedures as may be
+              | laid down in the relevant orders and Code rules from time to
+              | time.
+            li.list-group-item.list-group-item-dark
+              | Generally discharging other management accounting functions
+              | such as providing financial data for management reporting,
+              | assisting inventory management, participation in
+              | purchase/contracting decisions and surveys for major
+              | schemes in accordance with the relevant rules and orders.
+            li.list-group-item.list-group-item-primary
+              | Seeing that there are no financial irregularities in the
+              | transactions of the railway.
+  section#banner
+    #nav3.article
+      #develop.shadow-lg.p-4.mb-4.bg-white
+        h2.text-dark
+          b
+            font(face='Comic sans MS') OUR TEAM (SUMMER INTERNSHIP 2018) :
+      #table
+        table.table
+          thead.thead-light
+            tr
+              th NAME
+              th COLLEGE
+              th EMAIL
+          tbody
+            tr
+              td
+                b Guru Dayal
+              td Government College or Engineering and Ceramic Technology
+              td iamgurudayal22@gmail.com
+            tr
+              td
+                b Sanket Sinha
+              td SRMIST, Chennai
+              td sanketsinha1811@gmail.com
+            tr
+              td
+                b Saikat Adhurya
+              td University Institute of Technology, Burdwan University
+              td sakatadhuryabirds@gmail.com
+            tr
+              td
+                b vaibhav Sinha
+              td Techno India, kolkata
+              td  vaisin213@gmail.com
+            tr
+              td
+                b Shashank Kumar
+              td ITER, Bhubaneshwar
+              td  shashank.roin@gmail.com
+            tr
+              td
+                b Bijay Kumar Saw
+              td Dumka Engineering college, Dumka
+              td saw.bijay.bs@gmail.com
+            tr
+              td
+                b Ritu Harivansh Prajapati 
+              td LNCTE , Bhopal
+              td  rituprajapati0507@gmail.com
+            tr
+              td
+                b Subhashish kumar
+              td Amity University, Uttarpradesh
+              td  Officialshubh@outlook.com
+            tr
+              td
+                b Gaurav Kumar 
+              td St. Xavier&apos;s college, Ranchi
+              td   Gauravkr8500@gmail.com
+            tr
+              td
+                b Vivek Vishwakarma 
+              td St. Xavier&apos;s college, Ranchi
+              td   Gauravkr8500@gmail.com
+script.
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+  window.parent.parent.postMessage(["resultsFrame", {
+  height: document.body.getBoundingClientRect().height,
+  slug: "CFSEK"
+  }], "*")
+  }
+  $('ul li a').click(function(){ $('li a').removeClass("active"); $(this).addClass("active"); });

@@ -81,7 +81,7 @@ router.post('/signup',(req,res)=>{
 
 router.get('/logout',(req,res)=>{
 	req.logout();
-	res.redirect('/user/login');
+	res.redirect('/');
 })
 
 router.get('/add/department',ensureAuthenticated,(req,res)=>{
