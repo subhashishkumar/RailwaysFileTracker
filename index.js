@@ -13,7 +13,7 @@ const Department = require('./models/department');
 const Filetype = require('./models/filetype');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://guru:guru100@ds261440.mlab.com:61440/interns');
+mongoose.connect('m****');
 // const db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));
 
